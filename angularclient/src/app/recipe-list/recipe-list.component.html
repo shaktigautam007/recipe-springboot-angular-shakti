@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header>Recipes Dashboard</mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let recipe of recipes">
+          <img mat-list-avatar src="{{recipe.giphyUrl}}" alt="{{recipe.name}}">
+          <h3 mat-line>
+            <a mat-button [routerLink]="['/recipe-edit', recipe.id]">{{recipe.name}}</a>
+          </h3>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  
+    <button mat-fab color="primary" [routerLink]="['/recipe-add']">Add</button>
+  </mat-card>
